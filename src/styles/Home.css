@@ -1,120 +1,133 @@
 .container {
-  padding: 0 2rem;
+  /* height: 100vh; */
+  padding: 0 20px 20px 20px;
+  background: rgb(247, 248, 250);
+  /* background-image: url("../public/bg.png"); */
 }
 
-.main {
-  min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
+/* header */
+.header {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-}
-
-.title a {
-  color: #f213a4;
-  text-decoration: none;
-}
-
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
-}
-
-.title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
-}
-
-.title,
-.description {
-  text-align: center;
-}
-
-.connect {
-  margin-bottom: 2rem;
-  display: flex;
-  justify-content: center;
-}
-
-.description {
-  margin-top: 3rem;
-  margin-bottom: 2rem;
-  line-height: 1.5;
-  font-size: 1.5rem;
-}
-
-.code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
-}
-
-.grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 1200px;
-}
-
-.card {
-  background-color: #1b2129;
-  margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 350px;
-}
-
-.card:hover,
-.card:focus,
-.card:active {
-  background-color: #272c34;
-  color: #0ea5e9;
-  border-color: #0ea5e9;
-}
-
-.card h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
-}
-
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .logo {
-  height: 1em;
-  margin-left: 0.5rem;
+  display: flex;
+  align-items: center;
 }
 
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
+/* Ape NFT 信息 */
+.base-info {
+  padding: 0 16px;
+}
+
+.nfts-container {
+  --template-column-gutters: 8px;
+  --template-columns: 1;
+  --template-column-compact-multiplier: 1;
+  --template-reduced-columns: 0;
+  --template-reduced-columns-multiplier: 1;
+  display: grid;
+  gap: var(--template-column-gutters);
+  grid-auto-rows: minmax(0px, 1fr);
+  grid-template-columns: repeat(
+    calc(
+      var(--template-columns) -
+        (
+          var(--template-reduced-columns) *
+            var(--template-reduced-columns-multiplier)
+        )
+    ),
+    minmax(0, 1fr)
+  );
+}
+
+@media (min-width: 1440px) {
+  .nfts-container {
+    --template-reduced-columns: 1;
+  }
+}
+@media (min-width: 768px) {
+  .nfts-container {
+    --template-column-gutters: 16px;
+  }
+}
+@media (min-width: 20rem) {
+  .nfts-container {
+    --template-columns: 2;
+  }
+}
+@media (min-width: 30rem) {
+  .nfts-container {
+    --template-columns: 3;
+  }
+}
+@media (min-width: 50rem) {
+  .nfts-container {
+    --template-columns: 4;
   }
 }
 
-.card,
-.footer {
-  border-color: #222;
+@media (min-width: 70rem) {
+  .nfts-container {
+    --template-columns: 6;
+  }
 }
-.code {
-  background: #111;
+
+@media (min-width: 90rem) {
+  .nfts-container {
+    --template-columns: 8;
+  }
 }
-.logo img {
-  filter: invert(1);
+
+.nft-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 10px;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 4px 8px;
+  transition: box-shadow 0.25s ease-in-out 0s;
+  cursor: pointer;
+}
+.nft-card:hover {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 6px 25px;
+  transition: all 0.1s ease 0s;
+}
+
+.nft-img {
+  transition: transform 0.25s ease-in-out 0s;
+}
+.nft-card:hover .nft-img {
+  transform: scale3d(1.05, 1.05, 1);
+}
+
+.nft-card-info {
+  padding: 16px 16px 42px 16px;
+}
+
+.operates {
+  left: 0px;
+  width: 100%;
+  position: absolute;
+  bottom: -50px;
+  visibility: hidden;
+  transition: all 75ms ease-in-out 0s, visibility 0ms ease 75ms;
+}
+
+.nft-card:hover .operates-show {
+  bottom: 0px;
+  visibility: visible;
+  transition: all 75ms ease-in-out 0s;
+  background-color: rgb(46, 142, 238, 0.7);
+  padding: 8px 16px;
+}
+
+.white-text {
+  color: azure;
 }
