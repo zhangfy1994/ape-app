@@ -3,18 +3,23 @@ import Header from "./components/header";
 import AllNFTs from "./components/all-nfts";
 import MyNFT from "./components/my/index";
 import BaseInfo from "./components/base-info";
-import { useClipboardJS, useListenMetaMaskError } from "./hooks/useGlobalEvent";
+import { GlobalLoadingContext, useClipboardJS } from "./hooks/useGlobalEvent";
+import LoadingModal from "./components/loading";
+import React from "react";
 
 export default function Home() {
   useClipboardJS(".copy-uri");
-  useListenMetaMaskError();
+  const loadingRef = React.useRef(null);
 
   return (
-    <div className="container">
-      <Header />
-      <BaseInfo />
-      <MyNFT />
-      <AllNFTs />
-    </div>
+    <GlobalLoadingContext.Provider value={loadingRef}>
+      <div className="container">
+        <Header />
+        <BaseInfo />
+        <MyNFT />
+        <AllNFTs />
+        <LoadingModal ref={loadingRef} />
+      </div>
+    </GlobalLoadingContext.Provider>
   );
 }

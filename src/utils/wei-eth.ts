@@ -10,8 +10,6 @@ export function wei2eth(wei: ethers.BigNumberish): string {
 }
 
 export function gwei2eth(gwei: ethers.BigNumberish): string {
-  console.log("gwei2eth", gwei);
-
   return ethers.utils.formatUnits(gwei, "gwei");
 }
 

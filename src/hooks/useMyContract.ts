@@ -10,7 +10,7 @@ import { CONTRACT_ADDRESS } from "../const/contract";
 
 // useContract
 export function useMyContract() {
-  return useContract(CONTRACT_ADDRESS, APE_ABI);
+  return useContract(CONTRACT_ADDRESS);
 }
 
 // useContractRead

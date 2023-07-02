@@ -27,9 +27,7 @@ export function useClipboardJS(
 // 全局监听metaMask错误，其他钱包错误后续处理
 export function useListenMetaMaskError() {
   React.useEffect(() => {
-    function handleMetaMaskError(error: any) {
-      console.error("MetaMask error:", error);
-    }
+    function handleMetaMaskError(error: any) {}
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     provider.on("error", handleMetaMaskError);
 
@@ -37,4 +35,20 @@ export function useListenMetaMaskError() {
       provider.off("error", handleMetaMaskError);
     };
   }, []);
+}
+
+// 全局交易loading
+type GlobalLoading = {
+  setOpen: (open: boolean) => void;
+};
+export const GlobalLoadingContext = React.createContext<{
+  current: GlobalLoading | null;
+} | null>(null);
+
+export function useSetGlobalLoading(visible: boolean) {
+  const context = React.useContext(GlobalLoadingContext);
+
+  React.useEffect(() => {
+    context?.current?.setOpen(visible);
+  }, [visible]);
 }
