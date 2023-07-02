@@ -13,7 +13,7 @@
 
 ## 项目部署
 
-- [页面地址](https://bafybeiavlx4ewfjryvpewkliemmp2hfaxtbltghxuivcv7vzz4igoz6j44.ipfs-public.thirdwebcdn.com/)
+- [页面地址](https://bafybeihepyqlvtjaeh2q34elpsbiwojpv4kdqxkfhvm6sbrpcqaca4ud74.ipfs-public.thirdwebcdn.com/)
 
 - 使用 `thirdweb` 将前端资源上传到 `IPFS`
 
