@@ -1,6 +1,6 @@
 import { ALL_NFT_URIS } from "../const/nfts";
 
-export function generateRandom(from: number, to: number) {
+export function generateRandom(from: number, to: number): number {
   if (to < from) {
     return generateRandom(to, from);
   }

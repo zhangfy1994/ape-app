@@ -15,6 +15,7 @@ export const BaseInfo: React.FC = () => {
       <h4>Ape NFT 信息</h4>
 
       <div className="base-info">
+        <div>部署地址: Polygon Mumbai</div>
         <div>总供应量: {MAX_APES ? bigNum2Num(MAX_APES) : null}</div>
         <div>已铸造量: {apePrice ? bigNum2Num(totalSupply) : null}</div>
         <div>铸造价格: {apePrice ? wei2eth(apePrice) : null} ETH</div>
