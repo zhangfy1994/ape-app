@@ -2,6 +2,7 @@
 
 - 此项目是 [NFT 项目](https://github.com/zhangfy1994/ape-contract) 的前端页面。
 - 实现了`NFT铸造` `转账` `授权` `查看` 等基本操作。
+- 使用 `Polygon Mumbai 测试网络`
 
 ## 使用技术
 
