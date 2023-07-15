@@ -14,10 +14,12 @@ jobs:
 
       - name: Install and Build
         run: |
-          npm ci
-          npm run build
+          pnpm install
+          pnpm run build
 
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: github-pages
+        uses: JamesIves/github-pages-deploy-action@4.1.7
         with:
-          folder: dist
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: dist
