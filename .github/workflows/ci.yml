@@ -12,14 +12,21 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Install and Build
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "18"
+
+      - name: Install pnpm
         run: |
-          pnpm install
-          pnpm run build
+          npm install -g pnpm
+
+      - name: Install and Build
+        run: pnpm install && pnpm run build
 
       - name: github-pages
-        uses: JamesIves/github-pages-deploy-action@4.1.7
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: gh-pages
+          # ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          # BRANCH: gh-pages
           FOLDER: dist
