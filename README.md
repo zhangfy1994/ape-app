@@ -13,7 +13,7 @@
 
 ## 项目部署
 
-- [页面地址](https://bafybeihepyqlvtjaeh2q34elpsbiwojpv4kdqxkfhvm6sbrpcqaca4ud74.ipfs-public.thirdwebcdn.com/)
+- [页面地址](https://zhangfy1994.github.io/ape-app)
 
 - [mumbai 水龙头](https://mumbaifaucet.com/)
 
