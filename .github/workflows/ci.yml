@@ -19,7 +19,7 @@ jobs:
 
       - name: Install pnpm
         run: |
-          npm install -g pnpm
+          npm install -g pnpm@^7
 
       - name: Install and Build
         run: pnpm install && pnpm run build
