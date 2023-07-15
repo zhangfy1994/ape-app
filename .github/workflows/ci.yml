@@ -12,17 +12,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      # - name: Set up Node.js
-      #   uses: actions/setup-node@v3
-      #   with:
-      #     node-version: 18
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
 
-      # - name: Install pnpm
-      #   run: |
-      #     npm install -g pnpm@^7
+      - name: Install pnpm
+        run: |
+          npm install -g pnpm@^7
 
-      # - name: Install and Build
-      #   run: pnpm install && pnpm run build
+      - name: Install and Build
+        run: pnpm install && pnpm run build
 
       - name: github-pages
         uses: JamesIves/github-pages-deploy-action@v4
