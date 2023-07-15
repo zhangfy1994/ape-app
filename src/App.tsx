@@ -1,5 +1,5 @@
-import "./styles/home.css";
 import Header from "./components/header";
+import "./styles/home.css";
 import AllNFTs from "./components/all-nfts";
 import MyNFT from "./components/my/index";
 import BaseInfo from "./components/base-info";
