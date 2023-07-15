@@ -8,12 +8,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@master
+        uses: actions/checkout@v3
 
-      - name: Build and Deploy
-        uses: JamesIves/github-pages-deploy-action
-        env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: main
-          FOLDER: dist
-          BUILD_SCRIPT: pnpm install && pnpm run build
+      - name: Install and Build
+        run: |
+          pnpm install
+          pnpm run build
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist
