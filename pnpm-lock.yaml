@@ -13,6 +13,7 @@ specifiers:
   ethers: ^5.7.2
   react: ^18.2.0
   react-dom: ^18.2.0
+  rollup-plugin-css-only: ^4.3.0
   typescript: ^4.7.2
   vite: ^3
   vite-plugin-node-polyfills: ^0.7.0
@@ -32,9 +33,10 @@ devDependencies:
   '@types/react': 18.2.14
   '@types/react-dom': 18.2.6
   '@vitejs/plugin-react': 2.2.0_vite@3.2.7
+  rollup-plugin-css-only: 4.3.0_rollup@2.79.1
   typescript: 4.9.5
   vite: 3.2.7_@types+node@20.3.2
-  vite-plugin-node-polyfills: 0.7.0_vite@3.2.7
+  vite-plugin-node-polyfills: 0.7.0_rollup@2.79.1+vite@3.2.7
 
 packages:
 
@@ -1953,7 +1955,7 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@rollup/plugin-inject/5.0.3:
+  /@rollup/plugin-inject/5.0.3_rollup@2.79.1:
     resolution: {integrity: sha512-411QlbL+z2yXpRWFXSmw/teQRMkXcAAC8aYTemc15gwJRpvEVDQwoe+N/HTFD8RFG8+88Bme9DK2V9CVm7hJdA==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -1962,12 +1964,13 @@ packages:
       rollup:
         optional: true
     dependencies:
-      '@rollup/pluginutils': 5.0.2
+      '@rollup/pluginutils': 5.0.2_rollup@2.79.1
       estree-walker: 2.0.2
       magic-string: 0.27.0
+      rollup: 2.79.1
     dev: true
 
-  /@rollup/pluginutils/5.0.2:
+  /@rollup/pluginutils/5.0.2_rollup@2.79.1:
     resolution: {integrity: sha512-pTd9rIsP92h+B6wWwFbW8RkZv4hiR/xKsqre4SIuAOaOEQRxi0lqLke9k2/7WegC85GgUs9pjmOjCUi3In4vwA==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -1979,6 +1982,7 @@ packages:
       '@types/estree': 1.0.1
       estree-walker: 2.0.2
       picomatch: 2.3.1
+      rollup: 2.79.1
     dev: true
 
   /@safe-global/safe-core-sdk-types/1.10.1:
@@ -6868,6 +6872,16 @@ packages:
       bn.js: 5.2.1
     dev: false
 
+  /rollup-plugin-css-only/4.3.0_rollup@2.79.1:
+    resolution: {integrity: sha512-BsiCqJJQzZh2lQiHY5irejRoJ3I1EUFHEi5PjVqsr+EmOh54YrWVwd3YZEXnQJ2+fzlhif0YM/Kf0GuH90GAdQ==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      rollup: <4
+    dependencies:
+      '@rollup/pluginutils': 5.0.2_rollup@2.79.1
+      rollup: 2.79.1
+    dev: true
+
   /rollup/2.79.1:
     resolution: {integrity: sha512-uKxbd0IhMZOhjAiD5oAFp7BqvkA4Dv47qpOCtaNvng4HBwdbWtdOh8f5nZNuk2rp51PMGk3bzfWu5oayNEuYnw==}
     engines: {node: '>=10.0.0'}
@@ -7411,12 +7425,12 @@ packages:
     resolution: {integrity: sha512-cXEIW6cfr15lFv563k4GuVuW/fiwjknytD37jIOLSdSWuOI6WnO/oKwmP2FQTU2l01LP8/M5TSAJpzUaGe3uWg==}
     dev: false
 
-  /vite-plugin-node-polyfills/0.7.0_vite@3.2.7:
+  /vite-plugin-node-polyfills/0.7.0_rollup@2.79.1+vite@3.2.7:
     resolution: {integrity: sha512-DKBSGDOx3R8pUIsQFRZAWNYp0vIffJOT0NkuByX4WIQq80nJ2eamAph5T9zG91liO1Fyl1lo7/Onh6xoQO52XQ==}
     peerDependencies:
       vite: ^2.0.0 || ^3.0.0 || ^4.0.0
     dependencies:
-      '@rollup/plugin-inject': 5.0.3
+      '@rollup/plugin-inject': 5.0.3_rollup@2.79.1
       node-stdlib-browser: 1.2.0
       vite: 3.2.7_@types+node@20.3.2
     transitivePeerDependencies:
