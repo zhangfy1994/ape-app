@@ -6,6 +6,7 @@ import path from "path";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), nodePolyfills()],
+  base: "/ape-app/",
   resolve: {
     extensions: [".tsx", ".ts", ".jsx", ".js", ".json"],
     alias: {
@@ -14,8 +15,5 @@ export default defineConfig({
   },
   define: {
     "process.env": {},
-  },
-  build: {
-    outDir: "docs", // 指定打包输出目录，默认为 'dist'
   },
 });
